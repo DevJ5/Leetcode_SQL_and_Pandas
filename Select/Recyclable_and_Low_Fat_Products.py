@@ -6,4 +6,12 @@ def find_products(products: pd.DataFrame) -> pd.DataFrame:
     return subset[["product_id"]]
 
 
-# select product_id from Products where low_fats = 'Y' and recyclable = 'Y';
+# SQL Variant
+"""
+SELECT
+    product_id
+FROM
+    Products
+WHERE low_fats = 'Y'
+    AND recyclable = 'Y';
+"""
