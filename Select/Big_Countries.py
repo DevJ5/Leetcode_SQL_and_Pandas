@@ -2,9 +2,18 @@ import pandas as pd
 
 
 def big_countries(world: pd.DataFrame) -> pd.DataFrame:
-    subset = world[(world["area"] >= 3000000) | (world["population"] >= 25000000)]
-    return subset[["name", "population", "area"]]
+    mask = (world["population"] >= 25000000) | (world["area"] >= 3000000)
+    result = world.loc[mask, ["name", "population", "area"]]
+    return result
 
 
-# select name,population,area from World
-# where area >= 3000000 or population >= 25000000
+# SQL Variant
+"""
+SELECT
+    name, population, area
+FROM
+    World
+WHERE
+    population >= 25000000
+    OR area >= 3000000
+"""
