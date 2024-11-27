@@ -4,10 +4,17 @@ import pandas as pd
 def replace_employee_id(
     employees: pd.DataFrame, employee_uni: pd.DataFrame
 ) -> pd.DataFrame:
-    df = pd.merge(employees, employee_uni, how="left", on="id")
-    return df[["unique_id", "name"]]
+    merged_result = employees.merge(employee_uni, how="left", on="id")
+    result = merged_result[["unique_id", "name"]]
+    return result
 
 
-# select unique_id, name
-# from Employees
-# left join EmployeeUNI on Employees.id = EmployeeUNI.id
+# SQL Variant
+"""
+SELECT
+    unique_id, name
+FROM 
+    Employees
+LEFT JOIN
+    EmployeeUNI ON Employees.id = EmployeeUNI.id
+"""
