@@ -2,10 +2,17 @@ import pandas as pd
 
 
 def sales_analysis(sales: pd.DataFrame, product: pd.DataFrame) -> pd.DataFrame:
-    df = pd.merge(sales, product, on="product_id", how="inner")
-    return df[["product_name", "year", "price"]]
+    merged_result = sales.merge(product, how="left", on="product_id")
+    return merged_result[["product_name", "year", "price"]]
 
 
-# select product_name, year, price
-# from Sales
-# inner join Product on Sales.product_id = Product.product_id
+# SQL Variant
+"""
+SELECT
+    product_name, year, price
+FROM
+    Sales
+LEFT JOIN
+    Product 
+    ON Sales.product_id = Product.product_id
+"""
