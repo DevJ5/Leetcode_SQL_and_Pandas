@@ -1,8 +1,20 @@
 {
   "customers": {
-    "CustomerID": { "0": 1, "1": 2 },
-    "Name": { "0": "Alice Smith", "1": "Bob Johnson" },
-    "Email": { "0": "alice@example.com", "1": "bob@example.com" }
+    "CustomerID": { "0": 1, "1": 2, "2": 3, "3": null, "4": 5 },
+    "Name": {
+      "0": "Alice Smith",
+      "1": "Bob Johnson",
+      "2": "Charlie Brown",
+      "3": null,
+      "4": "Eva White"
+    },
+    "Email": {
+      "0": "alice@example.com",
+      "1": "bob@example.com",
+      "2": "charlie@example.com",
+      "3": "david@example.com",
+      "4": "eva@example.com"
+    }
   },
   "orders": {
     "OrderID": { "0": 101, "1": 102, "2": 103 },
