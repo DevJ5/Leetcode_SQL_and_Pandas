@@ -8,7 +8,13 @@ def employee_bonus(employee: pd.DataFrame, bonus: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-# select name, bonus
-# from Employee e
-# left join Bonus b on e.empId = b.empId
-# where bonus < 1000 or bonus is null
+# SQL Variant
+"""
+SELECT NAME,
+       bonus
+FROM   employee e
+       LEFT JOIN bonus b
+              ON e.empid = b.empid
+WHERE  bonus < 1000
+        OR bonus IS NULL  
+"""
